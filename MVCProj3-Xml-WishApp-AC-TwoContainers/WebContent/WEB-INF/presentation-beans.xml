@@ -7,8 +7,8 @@
    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
        <property name="mappings">
              <props>
-                 <prop key="welcome.htm">shc</prop>
-                 <prop key="wish.htm">wmc</prop>
+                 <prop key="welcome">shc</prop>
+                 <prop key="wish">wmc</prop>
              </props>
        </property>
    </bean>

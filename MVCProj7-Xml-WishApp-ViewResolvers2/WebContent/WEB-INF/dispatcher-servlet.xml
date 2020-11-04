@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+   <!--  Handler Mapping -->
+   <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+       <property name="alwaysUseFullPath" value="true"/>
+       <property name="mappings">
+             <props>
+                 <prop key="welcome">shc</prop>
+                 <prop key="wish">wmc</prop>
+             </props>
+       </property>
+   </bean>
+   
+   
+   <!-- Controllers -->
+   <bean id="shc"  class="com.nt.controller.ShowHomeController"/>
+   <bean id="wmc"  class="com.nt.controller.WishMessageController">
+      <constructor-arg  ref="wishService"/>
+   </bean>
+
+    
+     <!-- View Resolver -->
+  <!--     <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+         <property name="basename" value="views"/>
+         <property name="basename" value="com/nt/commons/views"/>
+     </bean>
+   -->   
+   
+     
+  
+      <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <!--  <property name="location" value="/WEB-INF/views.xml"/> -->
+         <property name="location"  value="/WEB-INF/cfgs/views.xml"/>
+     </bean>
+    
+ 
+    
+ 
+
+</beans>
